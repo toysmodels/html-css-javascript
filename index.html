@@ -1,0 +1,157 @@
+<!-- 
+	
+	Author: Didier Pardo
+	Topic: Responsive Masonry Layout con css, html and javascript
+
+    * la api  es llamada  al servidor de unsplash , se realiza dinamicamente por fetch   
+    
+    * Manipulamos directamente el doom por javascript por el metodo getElementById
+    para dibujar dinamicamente las imagenes en el html 
+
+    * Cada opcion del  menu que se seleccione realizara un llamado al API .
+      desde el html  por el  metodo onclic llamara a al funcion sub enviando por  
+      parametro  la variable a buscar en la api.
+
+    *
+
+	
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- estilo css -->
+    <link rel="stylesheet" href="style.css">
+     <!-- fuentes de google  --> 
+     <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Questrial&display=swap');</style>    
+    <!-- ICON AWESOME -->
+    <script src="https://kit.fontawesome.com/9ca8a7aadb.js" crossorigin="anonymous"></script>
+
+    <title>Titan Media Presentation</title>
+</head>
+<body>
+    <section>
+          <!-- nav bar start here --> 
+        <header class="header">
+            <nav class="nav">
+                <a href="#" class="logo"><img src="images/logo.png" alt="TechNews Logo" width="200px"></a>                 
+                <button class="nav-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item">
+                        <a href="#" class="nav-menu-link" onclick="sub('Branding-web-app-Photography')" >All</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="#" class="nav-menu-link"   onclick="sub('Branding')">Branding</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="#" class="nav-menu-link" onclick="sub('web')">Web</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="#" class="nav-menu-link" onclick="sub('Photography')">Photography</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="#" class="nav-menu-link" onclick="sub('App')">App</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="#" class="nav-menu-link" style="color: #fd758c;"><i class="fas fa-search"></i></a>
+                    </li>
+                </ul>                                   
+            </nav>
+        </header>
+          <!-- nav bar  end here --> 
+
+          <!-- row-headline start here --> 
+        <div class="row-headline">
+            <div class="column-12">
+                <h1 class="row-title">EXPLORE BEYOND HORIZON</h1>
+                <h3 class="row-title2">Magna mundi referrentur quo, no rebum dignissim qui.</h3>
+                <h3 class="row-title3">Per quodsi accusata id agam labores.</h3>
+                <div class="row-button"><button class="view-button" >VIEW OUR WORK</button></div>
+            </div>  
+        </div>
+         <!-- row-headline  end here -->
+
+        <nav class="nav-main-columns">
+            <ul class="grid-columns">  
+                <li class="grid-columns-li"> 
+                    <a href="#" class="grid-columns-li-3"> <i class="fas fa-th-large"></i></a>
+                </li>          
+                <li class="grid-columns-li">
+                     <a href="#" class="grid-columns-li-1"> <i class="fas fa-grip-lines"></i></a>
+                </li>             
+            </ul>
+        </nav>
+           <!-- menu de seleccion start here -->
+           
+            <ul class="menu-seleccion">
+                <li class="nav-menu-item">
+                    <a href="#" class="menu-seleccion-link menu-seleccion-link_active" onclick="sub('Branding-web-app-Photography')">All</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="#" class="menu-seleccion-link" onclick="sub('Branding')">Branding</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="#" class="menu-seleccion-link" onclick="sub('Web')">Web</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="#" class="menu-seleccion-link"  onclick="sub('Photography')">Photography</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="#" class="menu-seleccion-link"  onclick="sub('App')">App</a>
+                </li>                       
+            </ul>
+     
+          <!-- menu de seleccio  end here -->
+
+        <!-- Responsive Masonry Layout start here -->
+          <div class="container" >  
+            <div class="row-mansory">   
+                <div class="column-12">              
+                    <div class="gallery-wrapper" id="padre">
+                        <div>
+                            <img src="images/logo2.png" alt="logo imagen grande" style="border-radius: 10px;" >
+                        </div>                     
+                        <div id='elem'  ></div>                     
+                    </div>       
+                </div>
+			</div>       
+        </div>
+          <!-- Responsive Masonry Layout end here -->
+          <div class="show-more">
+            <div class="show-button"><button href="#" class="show-view-button">Show Me More</button></div>
+        </div>
+        
+    </section>
+    <footer>
+       
+        <nav class="footer">
+            <li>
+                <a href="#" style="font-family:Questrial"> 2016 <a style="color:#fd758c"> Sneak </a> All Right Reserved</a> 
+            </li>
+            <ul class="grid-columns" style="padding-left: 20px;">  
+            
+                <li class="footer-li"> 
+                    <a href="#" class="footer-columns-li-3"> <i class="fab fa-facebook-f"></i></a>
+                </li>          
+                <li class="footer-li">
+                     <a href="#" class="footer-columns-li-1"> <i class="fab fa-twitter"></i></a>
+                </li>  
+                <li class="footer-li">
+                    <a href="#" class="footer-columns-li-1"> <i class="fab fa-youtube-square"></i></a>
+               </li>   
+               <li class="footer-li">
+                <a href="#" class="footer-columns-li-1"><i class="fab fa-google-plus-g"></i></a>
+               </li>        
+            </ul>
+        </nav>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>
