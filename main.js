@@ -2,7 +2,7 @@
 
 
 
-var uri= `https://api.unsplash.com/search/photos?query=branding-web-photography-app&per_page=20&client_id=11f2ff5a50fcce4df43aa4c897d132d3f5ad4a84ed0aec7be67718deb5120192`;
+var uri= `https://api.unsplash.com/search/photos?query=peru lugares&per_page=20&client_id=11f2ff5a50fcce4df43aa4c897d132d3f5ad4a84ed0aec7be67718deb5120192`;
 var element=document.getElementById('elem')
 
 const get_api =(url) =>{
